@@ -1,0 +1,319 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green: #345c66;
+    --green-dark: #245b68;
+    --red: #9e2a2b;
+    --black: #000000;
+    --bg-cream: #fef4af;
+    --bg-green: #2e484e;
+    --nav-height: 90px;
+    --nav-margin: 16px;
+    --nav-radius: 18px;
+    --font: "Poppins", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-cream);
+    font-family: var(--font);
+}
+
+.navbar {
+    flex-shrink: 0;
+    margin: var(--nav-margin) var(--nav-margin) 0 var(--nav-margin);
+    height: var(--nav-height);
+    background-color: var(--green);
+    background-image:
+        linear-gradient(45deg, rgba(0, 0, 0, 0.07) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.07) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.07) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.07) 75%);
+    background-size: 44px 44px;
+    background-position:
+        0 0,
+        0 22px,
+        22px -22px,
+        -22px 0px;
+    border-radius: var(--nav-radius);
+    border: 3px solid var(--black);
+    box-shadow: 4px 5px 0 var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 43px;
+}
+
+.navbar_logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 45px;
+}
+
+.navbar_logo img {
+    height: 100%;
+    width: auto;
+    display: block;
+    transition: transform 0.15s ease;
+}
+
+.navbar_logo img:hover {
+    transform: scale(1.1);
+}
+
+.navbar_links {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    list-style: none;
+}
+
+.navbar_links a {
+    font-family: var(--font);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bg-cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.navbar_links a:hover {
+    color: transparent;
+}
+
+.navbar_links a::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font: inherit;
+    letter-spacing: inherit;
+    color: var(--bg-cream);
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.navbar_links a:hover::after {
+    opacity: 1;
+}
+
+main {
+    flex: 1;
+}
+
+.tentang {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 40px 32px 32px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tentang_about,
+.tentang_team {
+    position: relative;
+}
+
+.tentang_label {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bg-cream);
+    padding: 10px 22px;
+    border-radius: 14px;
+    border: 3px solid var(--black);
+    box-shadow: 5px 5px 0 var(--black);
+    position: relative;
+    z-index: 1;
+    margin-left: 24px;
+    margin-bottom: -18px;
+}
+
+.tentang_label--red {
+    background-color: var(--red);
+    margin-bottom: 23px;
+}
+
+.tentang_label--green {
+    background-color: var(--green);
+}
+
+.tentang_box {
+    border-radius: 18px;
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+}
+
+.tentang_box--white {
+    background-color: #ffffff;
+    padding: 40px 36px 32px;
+}
+
+.tentang_box--white p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--black);
+}
+
+.tentang_box--white strong {
+    font-weight: 700;
+}
+
+.tentang_team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 56px;
+    padding: 36px 8px 8px 48px;
+    justify-content: flex-start;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.team-card_avatar {
+    width: 140px;
+    height: 140px;
+    background-color: var(--green);
+    border-radius: 18px;
+    border: 3px solid var(--black);
+    box-shadow: 5px 5px 0 var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-card_avatar img {
+    width: 56px;
+    height: auto;
+    display: block;
+}
+
+.team-card_name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--black);
+}
+
+.tentang_support {
+    align-self: flex-end;
+    margin-top: 8px;
+    margin-right: 8px;
+    font-family: var(--font);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--bg-cream);
+    text-decoration: none;
+    background-color: var(--red);
+    padding: 14px 28px;
+    border-radius: 14px;
+    border: 3px solid var(--black);
+    box-shadow: 5px 5px 0 var(--black);
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+.tentang_support:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 var(--black);
+}
+
+.tentang_support:active {
+    transform: translate(5px, 5px);
+    box-shadow: none;
+}
+
+@media (max-width: 640px) {
+    .tentang {
+        padding: 28px 16px 24px;
+        gap: 36px;
+    }
+
+    .tentang_label {
+        font-size: 0.95rem;
+        margin-left: 12px;
+        padding: 8px 16px;
+    }
+
+    .tentang_box--white {
+        padding: 32px 20px 24px;
+    }
+
+    .tentang_team-grid {
+        gap: 28px;
+        padding: 32px 12px 4px;
+    }
+
+    .team-card_avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .tentang_support {
+        align-self: stretch;
+        text-align: center;
+        margin-right: 0;
+    }
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: var(--green);
+    background-image:
+        linear-gradient(45deg, rgba(0, 0, 0, 0.07) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.07) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.07) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.07) 75%);
+    background-size: 44px 44px;
+    background-position:
+        0 0,
+        0 22px,
+        22px -22px,
+        -22px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 70px;
+    border: 3px solid var(--black);
+}
+
+footer span {
+    padding-top: 9px;
+    font-family: var(--font);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--bg-cream);
+    letter-spacing: 0.01em;
+}
