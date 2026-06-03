@@ -70,7 +70,10 @@
                 countdownActive = false;
                 countdownEl.hidden = true;
                 countdownEl.textContent = "";
-                countdownEl.classList.remove("countdown-visible", "countdown-tick");
+                countdownEl.classList.remove(
+                    "countdown-visible",
+                    "countdown-tick",
+                );
                 doCapture();
                 return;
             }
