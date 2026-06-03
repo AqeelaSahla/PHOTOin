@@ -43,13 +43,15 @@
 
                 <div class="counter" id="shotCounter">1/3</div>
 
+                <div class="capture-countdown" id="captureCountdown" hidden aria-live="polite"></div>
+
                 <div class="capture-flash" id="captureFlash"></div>
             </div>
 
             <div class="studio-controls">
                 <button class="btn btn-back" onclick="history.back()">← &nbsp;Back</button>
                 
-                <button class="btn-capture" id="btnCapture" onclick="capturePhoto()" title="Ambil Foto">
+                <button class="btn-capture" id="btnCapture" onclick="capturePhoto()" title="Ambil Foto (timer 3 detik)">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
                         width="28" height="28">
@@ -60,7 +62,7 @@
                     </svg>
                 </button>
 
-                <button class="btn btn-retake" id="btnRetake" onclick="retakePhoto()">
+                <button class="btn btn-retake" id="btnRetake" onclick="retakePhoto()" title="Pilih foto untuk diambil ulang">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
                         width="18" height="18">
@@ -73,20 +75,29 @@
         </div>
 
         <div class="studio-right">
-            <div class="preview-list">
-                <div class="preview-slot active" id="slot-0">
+            <div class="preview-list" id="previewList">
+                <div class="preview-slot" id="slot-0" data-slot="0" title="Klik untuk ambil ulang foto 1">
                     <span class="preview-num" id="preview-num-0">1</span>
-                    <img class="preview-img" id="preview-img-0" src="" alt="" hidden>
+                    <img class="preview-img" id="preview-img-0" src="" alt="Foto 1" hidden>
                 </div>
 
-                    <div class="preview-slot active" id="slot-1">
+                <div class="preview-slot" id="slot-1" data-slot="1" title="Klik untuk ambil ulang foto 2">
                     <span class="preview-num" id="preview-num-1">2</span>
-                    <img class="preview-img" id="preview-img-1" src="" alt="" hidden>
+                    <img class="preview-img" id="preview-img-1" src="" alt="Foto 2" hidden>
                 </div>
 
-                    <div class="preview-slot active" id="slot-2">
+                <div class="preview-slot" id="slot-2" data-slot="2" title="Klik untuk ambil ulang foto 3">
                     <span class="preview-num" id="preview-num-2">3</span>
-                    <img class="preview-img" id="preview-img-2" src="" alt="" hidden>
+                    <img class="preview-img" id="preview-img-2" src="" alt="Foto 3" hidden>
+                </div>
+            </div>
+
+            <div class="retake-picker" id="retakePicker" hidden>
+                <p class="retake-picker-label">Pilih foto untuk diambil ulang:</p>
+                <div class="retake-picker-btns">
+                    <button type="button" class="retake-pick-btn" id="retakePick0" data-slot="0">1</button>
+                    <button type="button" class="retake-pick-btn" id="retakePick1" data-slot="1">2</button>
+                    <button type="button" class="retake-pick-btn" id="retakePick2" data-slot="2">3</button>
                 </div>
             </div>
 
