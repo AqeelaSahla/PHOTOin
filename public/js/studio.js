@@ -171,18 +171,6 @@
         updateUI();
     }
 
-    window.retakePhoto = function () {
-        if (countdownActive) {
-            cancelCountdown();
-            return;
-        }
-        if (!hasAnyPhoto()) return;
-
-        retakePicker.hidden = !retakePicker.hidden;
-        updateRetakePickerButtons();
-        updateUI();
-    };
-
     function updateRetakePickerButtons() {
         for (let i = 0; i < TOTAL_SHOTS; i++) {
             const btn = document.getElementById(`retakePick${i}`);
