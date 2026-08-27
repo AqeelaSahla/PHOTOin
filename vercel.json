@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "outputDirectory": "public/build",
+  "outputDirectory": "public",
   "buildCommand": "npm run build",
   "functions": {
     "api/index.php": {
@@ -8,38 +8,14 @@
     }
   },
   "routes": [
-    {
-      "src": "/build/(.*)",
-      "dest": "/public/build/$1"
-    },
-    {
-      "src": "/css/(.*)",
-      "dest": "/public/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "dest": "/public/js/$1"
-    },
-    {
-      "src": "/FrameAssets/(.*)",
-      "dest": "/public/FrameAssets/$1"
-    },
-    {
-      "src": "/ImageAssets/(.*)",
-      "dest": "/public/ImageAssets/$1"
-    },
-    {
-      "src": "/favicon\\.ico",
-      "dest": "/public/favicon.ico"
-    },
-    {
-      "src": "/robots\\.txt",
-      "dest": "/public/robots.txt"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
-    }
+    { "src": "/build/(.*)", "dest": "/build/$1" },
+    { "src": "/css/(.*)", "dest": "/css/$1" },
+    { "src": "/js/(.*)", "dest": "/js/$1" },
+    { "src": "/FrameAssets/(.*)", "dest": "/FrameAssets/$1" },
+    { "src": "/ImageAssets/(.*)", "dest": "/ImageAssets/$1" },
+    { "src": "/favicon\\.ico", "dest": "/favicon.ico" },
+    { "src": "/robots\\.txt", "dest": "/robots.txt" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ],
   "env": {
     "APP_ENV": "production",
