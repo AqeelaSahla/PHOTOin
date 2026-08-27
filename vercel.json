@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "outputDirectory": "public",
+  "outputDirectory": "public/build",
   "buildCommand": "bash build.sh",
   "functions": {
     "api/index.php": {
-      "runtime": "vercel-php@0.8.0"
+      "runtime": "vercel-php@0.7.2"
     }
   },
   "routes": [
@@ -21,12 +21,20 @@
       "dest": "/public/js/$1"
     },
     {
-      "src": "/images/(.*)",
-      "dest": "/public/images/$1"
+      "src": "/FrameAssets/(.*)",
+      "dest": "/public/FrameAssets/$1"
+    },
+    {
+      "src": "/ImageAssets/(.*)",
+      "dest": "/public/ImageAssets/$1"
     },
     {
       "src": "/favicon\\.ico",
       "dest": "/public/favicon.ico"
+    },
+    {
+      "src": "/robots\\.txt",
+      "dest": "/public/robots.txt"
     },
     {
       "src": "/(.*)",
