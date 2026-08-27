@@ -1,7 +1,7 @@
 {
   "version": 2,
   "outputDirectory": "public/build",
-  "buildCommand": "bash build.sh",
+  "buildCommand": "npm run build",
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.2"
