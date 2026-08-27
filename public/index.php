@@ -18,6 +18,8 @@ require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 // Temporary debug to find the empty driver
+$kernel = $app->make(\Illuminate\Contracts\Http\Kernel::class);
+$kernel->bootstrap();
 dd([
     'session.driver' => config('session.driver'),
     'cache.default' => config('cache.default'),
