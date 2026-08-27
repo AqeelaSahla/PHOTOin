@@ -17,16 +17,4 @@ require __DIR__.'/../vendor/autoload.php';
 /** @var Application $app */
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
-// Temporary debug to find the empty driver
-$kernel = $app->make(\Illuminate\Contracts\Http\Kernel::class);
-$kernel->bootstrap();
-dd([
-    'session.driver' => config('session.driver'),
-    'cache.default' => config('cache.default'),
-    'queue.default' => config('queue.default'),
-    'database.default' => config('database.default'),
-    'app.maintenance.driver' => config('app.maintenance.driver'),
-    'hashing.driver' => config('hashing.driver'),
-]);
-
 $app->handleRequest(Request::capture());

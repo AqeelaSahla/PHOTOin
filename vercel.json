@@ -17,8 +17,9 @@
     { "src": "/(.*)", "dest": "/api/index.php" }
   ],
   "env": {
-    "APP_ENV": "local",
-    "APP_DEBUG": "true",
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_MAINTENANCE_DRIVER": "file",
     "SESSION_DRIVER": "cookie",
     "CACHE_STORE": "array",
     "QUEUE_CONNECTION": "sync",
