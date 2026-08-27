@@ -8,13 +8,9 @@
     }
   },
   "routes": [
-    { "src": "/build/(.*)", "dest": "/build/$1" },
-    { "src": "/css/(.*)", "dest": "/css/$1" },
-    { "src": "/js/(.*)", "dest": "/js/$1" },
-    { "src": "/FrameAssets/(.*)", "dest": "/FrameAssets/$1" },
-    { "src": "/ImageAssets/(.*)", "dest": "/ImageAssets/$1" },
-    { "src": "/favicon\\.ico", "dest": "/favicon.ico" },
-    { "src": "/robots\\.txt", "dest": "/robots.txt" },
+    { "src": "/index.php", "dest": "/api/index.php" },
+    { "src": "/", "dest": "/api/index.php" },
+    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/api/index.php" }
   ],
   "env": {
